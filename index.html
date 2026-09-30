@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SmartProductHub - Discover smart products, useful deals and product recommendations.">
-<meta name="theme-color" content="#0b0f19">
-<title>SmartProductHub | Smart Products & Deals</title>
+
+<title>SmartProductHub - Smart Products & Deals</title>
+<meta name="description" content="SmartProductHub - Discover useful products, deals and product recommendations.">
 
 <style>
 *{
@@ -19,299 +19,396 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#070a10;
-    color:#fff;
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#ffffff;
+    color:#172033;
+    line-height:1.5;
 }
 
 button,
 input,
 textarea,
 select{
-    font:inherit;
+    font-family:inherit;
 }
 
 button{
     cursor:pointer;
 }
 
-/* HEADER */
+a{
+    text-decoration:none;
+}
 
-header{
+/* =========================
+   HEADER
+========================= */
+
+.top-strip{
+    background:#f58220;
+    color:#fff;
+    text-align:center;
+    font-size:12px;
+    padding:7px 15px;
+    font-weight:600;
+}
+
+.header{
+    background:#fff;
+    border-bottom:1px solid #e6e9ee;
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(7,10,16,.94);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .navbar{
     max-width:1250px;
     margin:auto;
-    padding:15px 20px;
+    min-height:72px;
+    padding:12px 20px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:20px;
+    gap:30px;
 }
 
 .logo{
-    font-size:23px;
-    font-weight:900;
-    letter-spacing:-.5px;
-    white-space:nowrap;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    min-width:max-content;
 }
 
-.logo span{
-    color:#6d7cff;
+.logo-icon{
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    background:#1467a8;
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font-size:21px;
+    font-weight:900;
+}
+
+.logo-text{
+    font-size:20px;
+    line-height:1.05;
+    font-weight:900;
+    color:#153f68;
+}
+
+.logo-text span{
+    color:#f58220;
+}
+
+.logo-sub{
+    display:block;
+    font-size:8px;
+    color:#7b8490;
+    letter-spacing:1.7px;
+    margin-top:2px;
 }
 
 .nav-links{
     display:flex;
-    align-items:center;
     gap:24px;
+    margin-left:auto;
 }
 
 .nav-links a{
-    color:#c8cbd4;
-    font-size:14px;
+    color:#273548;
+    font-size:13px;
     font-weight:600;
-    transition:.2s;
 }
 
 .nav-links a:hover{
-    color:#fff;
+    color:#1467a8;
 }
 
-.nav-btn{
+.search-top{
+    width:210px;
+    height:38px;
+    border:1px solid #dce1e7;
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.search-top input{
     border:0;
-    background:#6d7cff;
+    outline:0;
+    width:100%;
+    padding:0 10px;
+    font-size:12px;
+}
+
+.search-top button{
+    width:42px;
+    height:100%;
+    border:0;
+    background:#1467a8;
     color:#fff;
-    padding:10px 16px;
-    border-radius:10px;
-    font-weight:700;
 }
 
 .menu-btn{
     display:none;
-    background:none;
     border:0;
+    background:#1467a8;
     color:#fff;
-    font-size:25px;
+    width:40px;
+    height:38px;
+    border-radius:6px;
+    font-size:20px;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    min-height:620px;
-    display:flex;
-    align-items:center;
     background:
-    radial-gradient(circle at 15% 25%,rgba(109,124,255,.22),transparent 30%),
-    radial-gradient(circle at 85% 40%,rgba(0,210,255,.12),transparent 30%);
+        linear-gradient(90deg,
+        rgba(20,103,168,.97) 0%,
+        rgba(20,103,168,.88) 45%,
+        rgba(20,103,168,.20) 100%),
+        linear-gradient(135deg,#0e659e,#7bc6e8);
+    min-height:470px;
+    position:relative;
+    overflow:hidden;
 }
 
 .hero-inner{
-    width:100%;
     max-width:1250px;
     margin:auto;
-    padding:80px 20px;
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
+    padding:70px 20px;
+    min-height:470px;
+    display:flex;
     align-items:center;
-    gap:50px;
 }
 
-.badge{
-    display:inline-block;
-    background:rgba(109,124,255,.12);
-    border:1px solid rgba(109,124,255,.35);
-    color:#aeb6ff;
-    padding:8px 13px;
-    border-radius:30px;
+.hero-content{
+    max-width:620px;
+    color:#fff;
+}
+
+.hero-small{
+    color:#ffd4a9;
     font-size:12px;
-    font-weight:700;
-    margin-bottom:20px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:800;
+    margin-bottom:13px;
 }
 
 .hero h1{
-    font-size:clamp(42px,6vw,76px);
-    line-height:1.02;
-    letter-spacing:-3px;
-    margin-bottom:22px;
+    font-size:clamp(38px,5vw,64px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:20px;
 }
 
 .hero h1 span{
-    color:#7b88ff;
+    color:#ffd36e;
 }
 
 .hero p{
-    max-width:650px;
-    color:#a8adb9;
-    font-size:18px;
-    margin-bottom:30px;
+    max-width:560px;
+    font-size:16px;
+    color:#eef8ff;
+    margin-bottom:28px;
 }
 
 .hero-buttons{
     display:flex;
-    gap:12px;
+    gap:10px;
     flex-wrap:wrap;
 }
 
-.primary-btn,
-.secondary-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
+.orange-btn,
+.white-btn{
+    border:0;
     padding:13px 20px;
-    border-radius:11px;
+    border-radius:5px;
+    font-size:13px;
     font-weight:800;
-    border:1px solid transparent;
-    transition:.2s;
 }
 
-.primary-btn{
-    background:#6d7cff;
+.orange-btn{
+    background:#f58220;
     color:#fff;
 }
 
-.primary-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 12px 35px rgba(109,124,255,.25);
+.orange-btn:hover{
+    background:#df6e0e;
 }
 
-.secondary-btn{
-    border-color:#2b3140;
-    color:#fff;
-    background:#111621;
+.white-btn{
+    background:#fff;
+    color:#155c91;
 }
 
-.hero-card{
-    background:linear-gradient(145deg,#111725,#0b0e16);
-    border:1px solid #252c3a;
-    border-radius:25px;
-    padding:35px;
-    box-shadow:0 30px 80px rgba(0,0,0,.35);
+.hero-decoration{
+    position:absolute;
+    right:-50px;
+    bottom:-100px;
+    width:470px;
+    height:470px;
+    border-radius:50%;
+    background:rgba(255,255,255,.10);
 }
 
-.hero-card-icon{
-    width:70px;
-    height:70px;
-    display:grid;
-    place-items:center;
-    border-radius:20px;
-    background:#161d31;
-    font-size:34px;
-    margin-bottom:25px;
+.hero-decoration:after{
+    content:"🛍️";
+    position:absolute;
+    font-size:170px;
+    left:130px;
+    top:115px;
+    opacity:.9;
 }
 
-.hero-card h3{
-    font-size:25px;
-    margin-bottom:10px;
+/* =========================
+   TRUST BAR
+========================= */
+
+.trust{
+    background:#fff;
+    border-bottom:1px solid #e7ebef;
 }
 
-.hero-card p{
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-.stats{
+.trust-inner{
+    max-width:1150px;
+    margin:auto;
+    padding:28px 20px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:10px;
+    gap:20px;
 }
 
-.stat{
-    padding:14px;
-    background:#0b0f18;
-    border:1px solid #202634;
-    border-radius:12px;
-    text-align:center;
+.trust-item{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    justify-content:center;
+    text-align:left;
 }
 
-.stat strong{
+.trust-icon{
+    width:46px;
+    height:46px;
+    flex:0 0 46px;
+    border-radius:50%;
+    background:#e9f4fc;
+    color:#1467a8;
+    display:grid;
+    place-items:center;
+    font-size:21px;
+}
+
+.trust-item strong{
     display:block;
-    font-size:18px;
+    color:#172033;
+    font-size:14px;
 }
 
-.stat span{
-    color:#8e94a2;
+.trust-item span{
+    color:#777f8a;
     font-size:11px;
 }
 
-/* GENERAL */
+/* =========================
+   GENERAL
+========================= */
 
 .section{
     max-width:1250px;
     margin:auto;
-    padding:80px 20px;
+    padding:65px 20px;
 }
 
-.section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    gap:20px;
-    margin-bottom:30px;
+.section-heading{
+    text-align:center;
+    margin-bottom:35px;
 }
 
-.section-title{
-    font-size:32px;
-    letter-spacing:-1px;
+.section-heading h2{
+    font-size:31px;
+    color:#172033;
+    margin-bottom:7px;
 }
 
-.section-subtitle{
-    color:#8d93a0;
-    font-size:14px;
-    margin-top:5px;
-}
-
-.view-all{
-    color:#8995ff;
+.section-heading p{
+    color:#737d89;
     font-size:13px;
-    font-weight:700;
 }
 
-/* CATEGORIES */
+/* =========================
+   CATEGORIES
+========================= */
 
-.categories{
+.category-grid{
     display:grid;
     grid-template-columns:repeat(6,1fr);
     gap:12px;
 }
 
-.category{
-    background:#0d121c;
-    border:1px solid #202633;
-    border-radius:16px;
-    padding:22px 10px;
+.category-card{
+    border:1px solid #e0e5eb;
+    background:#fff;
+    border-radius:7px;
+    padding:20px 10px;
     text-align:center;
     transition:.2s;
 }
 
-.category:hover{
-    transform:translateY(-4px);
-    border-color:#5966db;
+.category-card:hover{
+    border-color:#1971b2;
+    box-shadow:0 8px 25px rgba(20,103,168,.10);
+    transform:translateY(-3px);
 }
 
 .category-icon{
-    font-size:27px;
+    font-size:29px;
     margin-bottom:8px;
 }
 
-.category-name{
-    font-size:13px;
-    font-weight:700;
+.category-card strong{
+    font-size:12px;
+    color:#24364a;
 }
 
-/* PRODUCTS */
+/* =========================
+   SEARCH
+========================= */
+
+.product-search{
+    max-width:600px;
+    margin:0 auto 30px;
+    display:flex;
+    border:1px solid #d8dfe6;
+    border-radius:6px;
+    overflow:hidden;
+}
+
+.product-search input{
+    width:100%;
+    height:46px;
+    border:0;
+    outline:0;
+    padding:0 15px;
+    font-size:13px;
+}
+
+.product-search button{
+    width:60px;
+    border:0;
+    background:#1467a8;
+    color:#fff;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
 
 .product-grid{
     display:grid;
@@ -320,23 +417,24 @@ header{
 }
 
 .product-card{
-    background:#0d121b;
-    border:1px solid #202633;
-    border-radius:18px;
+    background:#fff;
+    border:1px solid #e0e4e9;
+    border-radius:7px;
     overflow:hidden;
-    transition:.25s;
     position:relative;
+    transition:.25s;
 }
 
 .product-card:hover{
-    transform:translateY(-5px);
-    border-color:#4e5bd0;
-    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    transform:translateY(-4px);
+    box-shadow:0 12px 35px rgba(24,48,75,.12);
+    border-color:#cbd5df;
 }
 
 .product-image{
-    height:230px;
-    background:#111722;
+    height:255px;
+    background:#fafbfc;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -347,230 +445,319 @@ header{
     width:100%;
     height:100%;
     object-fit:contain;
-    padding:15px;
+    padding:12px;
 }
 
-.no-image{
-    font-size:50px;
-    opacity:.35;
+.product-placeholder{
+    font-size:75px;
+    opacity:.28;
 }
 
-.product-info{
-    padding:17px;
-}
-
-.product-category{
-    color:#7d88ff;
+.discount-badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#d94a24;
+    color:#fff;
     font-size:10px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:1px;
+    font-weight:900;
+    padding:6px 9px;
+    border-radius:3px;
 }
 
-.product-name{
-    font-size:16px;
+.choice-badge{
+    position:absolute;
+    top:12px;
+    right:12px;
+    background:#20262d;
+    color:#fff;
+    font-size:9px;
     font-weight:800;
-    margin:7px 0;
-    min-height:45px;
+    padding:6px 8px;
+    border-radius:3px;
 }
 
-.product-description{
-    color:#858b98;
-    font-size:12px;
-    min-height:38px;
+.product-body{
+    padding:16px;
+}
+
+.product-brand{
+    color:#2b6f9f;
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.product-title{
+    font-size:15px;
+    line-height:1.4;
+    min-height:43px;
+    color:#202b39;
+    font-weight:700;
 }
 
 .rating{
-    margin:10px 0;
-    color:#ffc857;
+    margin:9px 0;
+    color:#f58220;
     font-size:13px;
+}
+
+.rating span{
+    color:#606b78;
+    margin-left:4px;
+    font-size:11px;
+}
+
+.product-description{
+    color:#77818d;
+    font-size:11px;
+    min-height:35px;
+    margin-bottom:10px;
 }
 
 .price-row{
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:10px;
+    gap:9px;
+    flex-wrap:wrap;
 }
 
-.price{
-    font-size:20px;
+.product-price{
+    font-size:21px;
     font-weight:900;
+    color:#161f2d;
 }
 
-.deal{
-    background:#172c23;
-    color:#65d69a;
+.old-price{
+    font-size:11px;
+    color:#929aa3;
+    text-decoration:line-through;
+}
+
+.offer{
+    color:#c94d24;
     font-size:10px;
-    padding:4px 7px;
-    border-radius:5px;
     font-weight:800;
 }
 
-.product-buttons{
+.product-actions{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:7px;
-    margin-top:13px;
+    margin-top:14px;
 }
 
-.product-buttons button,
-.product-buttons a{
+.view-btn,
+.check-btn{
     border:0;
-    padding:10px 7px;
-    border-radius:8px;
-    text-align:center;
+    padding:10px 5px;
+    border-radius:4px;
     font-size:11px;
     font-weight:800;
+    text-align:center;
 }
 
-.details-btn{
-    background:#181e2a;
+.view-btn{
+    background:#edf3f8;
+    color:#155f91;
+}
+
+.check-btn{
+    background:#f58220;
     color:#fff;
 }
 
-.buy-btn{
-    background:#6d7cff;
-    color:#fff;
+.check-btn:hover{
+    background:#dc6e10;
 }
 
-/* SEARCH */
+/* =========================
+   DEAL SECTION
+========================= */
 
-.search-box{
+.deals-section{
+    background:#f6f9fb;
+    border-top:1px solid #e8edf1;
+    border-bottom:1px solid #e8edf1;
+}
+
+.deal-header{
     display:flex;
-    gap:10px;
-    margin-bottom:25px;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:28px;
 }
 
-.search-box input{
-    flex:1;
-    background:#0e131d;
-    border:1px solid #252c3a;
-    color:#fff;
-    padding:15px;
-    border-radius:11px;
-    outline:none;
+.deal-header h2{
+    font-size:30px;
 }
 
-.search-box input:focus{
-    border-color:#6674f5;
-}
-
-.search-box button{
-    background:#6d7cff;
-    color:#fff;
-    border:0;
-    padding:0 22px;
-    border-radius:11px;
-    font-weight:800;
-}
-
-/* FEATURES */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
-
-.feature{
-    background:#0d121b;
-    border:1px solid #202633;
-    border-radius:17px;
-    padding:25px;
-}
-
-.feature-icon{
-    font-size:28px;
-    margin-bottom:15px;
-}
-
-.feature h3{
-    margin-bottom:7px;
-}
-
-.feature p{
-    color:#8c92a0;
+.deal-header p{
+    color:#747e8a;
     font-size:13px;
 }
 
-/* ABOUT */
-
-.about{
-    background:#0b0f17;
-    border-top:1px solid #171d28;
-    border-bottom:1px solid #171d28;
+.deal-line{
+    width:55px;
+    height:3px;
+    background:#f58220;
+    margin-top:10px;
 }
 
-.about-box{
-    max-width:1250px;
-    margin:auto;
-    padding:80px 20px;
+/* =========================
+   FEATURED CONTENT
+========================= */
+
+.featured{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
 }
 
-.about-content{
-    max-width:800px;
+.featured-image{
+    min-height:330px;
+    background:#e9f3fa;
+    border-radius:8px;
+    display:grid;
+    place-items:center;
+    font-size:110px;
 }
 
-.about-content h2{
-    font-size:38px;
+.featured-content small{
+    color:#f58220;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.featured-content h2{
+    font-size:36px;
+    line-height:1.15;
+    margin:10px 0 15px;
+}
+
+.featured-content p{
+    color:#737d89;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section{
+    background:#fff;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-grid h2{
+    font-size:35px;
     margin-bottom:15px;
 }
 
-.about-content p{
-    color:#969ca9;
+.about-grid p{
+    color:#737d89;
+    font-size:14px;
     margin-bottom:12px;
 }
 
-/* CONTACT */
-
-.contact-box{
-    background:linear-gradient(145deg,#101726,#0c1018);
-    border:1px solid #252d3d;
-    border-radius:22px;
-    padding:40px;
+.about-box{
+    background:#eef7fc;
+    border-left:4px solid #1467a8;
+    padding:25px;
+    border-radius:5px;
 }
 
-.contact-box h2{
-    margin-bottom:10px;
+.about-box strong{
+    display:block;
+    color:#155d8f;
+    margin-bottom:7px;
 }
 
-.contact-box p{
-    color:#9298a5;
+.about-box span{
+    color:#687582;
+    font-size:13px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section{
+    background:#f6f9fb;
+}
+
+.contact-card{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    background:#fff;
+    border:1px solid #e0e5ea;
+    padding:45px 25px;
+    border-radius:8px;
+}
+
+.contact-card h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.contact-card p{
+    color:#737d89;
+    font-size:13px;
     margin-bottom:22px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    border-top:1px solid #1b202b;
-    background:#06080d;
+    background:#123b5d;
+    color:#fff;
 }
 
 .footer-inner{
     max-width:1250px;
     margin:auto;
-    padding:45px 20px 25px;
+    padding:50px 20px 25px;
 }
 
-.footer-top{
+.footer-grid{
     display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:40px;
-    margin-bottom:35px;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:45px;
+    padding-bottom:30px;
+}
+
+.footer-logo{
+    font-size:21px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.footer-logo span{
+    color:#ff9a45;
 }
 
 .footer-col h3{
-    margin-bottom:14px;
-    font-size:15px;
+    font-size:14px;
+    margin-bottom:13px;
 }
 
 .footer-col p,
 .footer-col a{
-    color:#7f8592;
-    font-size:13px;
     display:block;
+    color:#c4d1dc;
+    font-size:12px;
     margin-bottom:8px;
 }
 
@@ -579,121 +766,78 @@ footer{
 }
 
 .disclosure{
-    border-top:1px solid #1a1f28;
+    border-top:1px solid rgba(255,255,255,.15);
     padding-top:20px;
-    color:#707683;
-    font-size:11px;
+    color:#afc1cf;
+    font-size:10px;
 }
 
 .copyright{
     text-align:center;
-    color:#686e7a;
-    font-size:12px;
-    padding-top:20px;
+    color:#a9bdcb;
+    font-size:10px;
+    padding-top:18px;
 }
 
-/* MODAL */
+/* =========================
+   ADMIN
+========================= */
 
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(7px);
-    z-index:2000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.modal.active{
-    display:flex;
-}
-
-.modal-box{
-    width:100%;
-    max-width:600px;
-    max-height:90vh;
-    overflow:auto;
-    background:#0d121b;
-    border:1px solid #2a3140;
-    border-radius:20px;
-    padding:25px;
-    position:relative;
-}
-
-.close{
-    position:absolute;
-    right:17px;
-    top:14px;
-    background:#191f2b;
-    color:#fff;
-    border:0;
-    width:34px;
-    height:34px;
-    border-radius:50%;
-    font-size:18px;
-}
-
-.modal-product-image{
-    height:280px;
-    background:#111722;
-    border-radius:15px;
-    overflow:hidden;
-    margin-bottom:20px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.modal-product-image img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    padding:20px;
-}
-
-.modal-box h2{
-    margin-bottom:8px;
-}
-
-.modal-description{
-    color:#969ca9;
-    margin:15px 0;
-}
-
-.modal-price{
-    font-size:27px;
-    font-weight:900;
-    margin-bottom:15px;
-}
-
-/* ADMIN */
-
-.admin-panel{
+#adminPage{
     display:none;
 }
 
-.admin-panel.active{
-    display:block;
+.admin-wrap{
+    max-width:1150px;
+    margin:auto;
+    padding:50px 20px;
 }
 
-.admin-header{
+.admin-top{
     display:flex;
     justify-content:space-between;
     align-items:center;
     margin-bottom:25px;
-    gap:15px;
 }
 
-.admin-grid{
+.admin-top h1{
+    color:#173f61;
+    font-size:30px;
+}
+
+.back-btn{
+    border:0;
+    background:#eaf2f8;
+    color:#1467a8;
+    padding:11px 16px;
+    border-radius:5px;
+    font-weight:800;
+}
+
+.admin-box{
+    background:#fff;
+    border:1px solid #dfe5ea;
+    border-radius:8px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.admin-box h2{
+    color:#1c344c;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.admin-form{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:15px;
 }
 
 .form-group{
-    margin-bottom:15px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
 }
 
 .form-group.full{
@@ -701,23 +845,21 @@ footer{
 }
 
 .form-group label{
-    display:block;
-    color:#b7bdc9;
+    color:#445365;
     font-size:12px;
-    font-weight:700;
-    margin-bottom:6px;
+    font-weight:800;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select{
     width:100%;
-    background:#080c13;
-    border:1px solid #29303e;
-    color:#fff;
-    padding:12px;
-    border-radius:9px;
+    border:1px solid #d5dce3;
+    border-radius:5px;
+    padding:11px;
     outline:none;
+    background:#fff;
+    color:#172033;
 }
 
 .form-group textarea{
@@ -728,21 +870,19 @@ footer{
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
-    border-color:#6875ee;
+    border-color:#1467a8;
 }
 
 .image-preview{
     width:100%;
-    height:150px;
-    background:#080c13;
-    border:1px dashed #353d4d;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    height:170px;
+    border:1px dashed #cbd4dd;
+    background:#fafcfd;
+    border-radius:5px;
+    display:grid;
+    place-items:center;
     overflow:hidden;
-    margin-top:8px;
-    color:#777f8d;
+    color:#8a949e;
     font-size:12px;
 }
 
@@ -752,235 +892,373 @@ footer{
     object-fit:contain;
 }
 
-.form-actions{
+.admin-actions{
     display:flex;
     gap:10px;
     margin-top:10px;
 }
 
-.admin-products{
-    margin-top:35px;
+.add-btn{
+    background:#1467a8;
+    color:#fff;
+    border:0;
+    padding:12px 20px;
+    border-radius:5px;
+    font-weight:800;
+}
+
+.clear-btn{
+    background:#eef2f5;
+    color:#415264;
+    border:0;
+    padding:12px 20px;
+    border-radius:5px;
+    font-weight:800;
+}
+
+.admin-product-list{
+    display:grid;
+    gap:10px;
 }
 
 .admin-product{
     display:grid;
-    grid-template-columns:70px 1fr auto;
-    gap:15px;
+    grid-template-columns:80px 1fr auto;
     align-items:center;
-    background:#0a0f17;
-    border:1px solid #202633;
-    border-radius:12px;
+    gap:15px;
+    border:1px solid #e0e5ea;
+    border-radius:6px;
     padding:10px;
-    margin-bottom:8px;
 }
 
 .admin-product img{
-    width:70px;
-    height:60px;
+    width:80px;
+    height:70px;
     object-fit:contain;
-    background:#111722;
-    border-radius:7px;
+    background:#f8fafb;
+    border-radius:4px;
 }
 
-.admin-product-name{
-    font-weight:800;
-    font-size:13px;
+.admin-product h3{
+    font-size:14px;
+    color:#23364b;
 }
 
-.admin-product-price{
-    color:#8995ff;
-    font-size:12px;
-}
-
-.admin-actions{
-    display:flex;
-    gap:6px;
-}
-
-.admin-actions button{
-    border:0;
-    padding:7px 9px;
-    border-radius:7px;
+.admin-product p{
+    color:#7a8490;
     font-size:11px;
 }
 
+.edit-btn,
+.delete-btn{
+    border:0;
+    padding:8px 11px;
+    border-radius:4px;
+    font-size:11px;
+    font-weight:800;
+}
+
 .edit-btn{
-    background:#28304a;
-    color:#fff;
+    background:#e8f1f8;
+    color:#1467a8;
 }
 
 .delete-btn{
-    background:#3a2025;
-    color:#ff9da6;
+    background:#fff0ed;
+    color:#d24d2d;
 }
 
-.empty{
-    padding:40px;
-    text-align:center;
-    color:#707784;
-    border:1px dashed #252c39;
-    border-radius:15px;
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(12,25,38,.65);
+    z-index:3000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
 }
 
-/* TOAST */
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:720px;
+    max-height:92vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:8px;
+    padding:25px;
+    position:relative;
+}
+
+.close-modal{
+    position:absolute;
+    right:15px;
+    top:15px;
+    width:34px;
+    height:34px;
+    border:0;
+    border-radius:50%;
+    background:#edf1f4;
+    color:#243548;
+    font-size:19px;
+}
+
+.modal-image{
+    height:330px;
+    background:#fafbfc;
+    display:grid;
+    place-items:center;
+    margin-bottom:20px;
+    border-radius:5px;
+    overflow:hidden;
+}
+
+.modal-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.modal-category{
+    color:#1467a8;
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.modal-title{
+    font-size:25px;
+    color:#1a2838;
+    margin:7px 0;
+}
+
+.modal-price{
+    font-size:28px;
+    font-weight:900;
+    margin:10px 0;
+}
+
+.modal-description{
+    color:#707b87;
+    font-size:13px;
+    margin-bottom:18px;
+}
+
+/* =========================
+   TOAST
+========================= */
 
 .toast{
     position:fixed;
-    bottom:25px;
+    bottom:20px;
     left:50%;
-    transform:translate(-50%,120px);
-    background:#fff;
-    color:#090b10;
-    padding:12px 20px;
-    border-radius:10px;
+    transform:translate(-50%,100px);
+    background:#173f61;
+    color:#fff;
+    padding:11px 18px;
+    border-radius:5px;
+    font-size:12px;
     font-weight:700;
-    font-size:13px;
     z-index:5000;
     transition:.3s;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
 .toast.show{
     transform:translate(-50%,0);
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
-@media(max-width:1000px){
+@media(max-width:1050px){
+
+    .nav-links{
+        gap:13px;
+    }
+
+    .search-top{
+        width:160px;
+    }
+
     .product-grid{
         grid-template-columns:repeat(3,1fr);
     }
 
-    .categories{
+    .category-grid{
         grid-template-columns:repeat(3,1fr);
     }
 }
 
 @media(max-width:800px){
+
+    .navbar{
+        padding:10px 15px;
+    }
+
     .nav-links{
         display:none;
         position:absolute;
-        top:67px;
         left:0;
         right:0;
-        background:#080b12;
-        padding:20px;
+        top:70px;
+        background:#fff;
+        border-bottom:1px solid #ddd;
         flex-direction:column;
-        border-bottom:1px solid #202633;
+        padding:18px 20px;
     }
 
     .nav-links.show{
         display:flex;
     }
 
+    .search-top{
+        display:none;
+    }
+
     .menu-btn{
         display:block;
+        margin-left:auto;
+    }
+
+    .hero{
+        min-height:430px;
     }
 
     .hero-inner{
-        grid-template-columns:1fr;
-        padding-top:60px;
+        min-height:430px;
+        padding:55px 20px;
     }
 
-    .hero-card{
-        display:none;
+    .hero-decoration{
+        opacity:.35;
     }
 
-    .product-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .features{
+    .trust-inner{
         grid-template-columns:1fr;
     }
 
-    .footer-top{
+    .featured,
+    .about-grid{
         grid-template-columns:1fr;
     }
 
-    .admin-grid{
+    .featured-image{
+        min-height:230px;
+    }
+
+    .footer-grid{
         grid-template-columns:1fr;
+    }
+
+    .admin-form{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
     }
 }
 
-@media(max-width:520px){
-    .navbar{
-        padding:13px 15px;
+@media(max-width:550px){
+
+    .top-strip{
+        font-size:10px;
     }
 
-    .logo{
-        font-size:19px;
+    .logo-text{
+        font-size:17px;
     }
 
-    .nav-btn{
-        display:none;
+    .logo-icon{
+        width:34px;
+        height:34px;
+        font-size:18px;
     }
 
     .hero h1{
-        font-size:44px;
-        letter-spacing:-2px;
+        font-size:40px;
     }
 
     .hero p{
-        font-size:15px;
+        font-size:14px;
     }
 
     .section{
-        padding:55px 15px;
+        padding:48px 15px;
     }
 
-    .section-title{
+    .section-heading h2{
         font-size:26px;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
     .product-grid{
         grid-template-columns:1fr 1fr;
-        gap:10px;
+        gap:9px;
     }
 
     .product-image{
-        height:170px;
+        height:180px;
     }
 
-    .product-info{
-        padding:12px;
+    .product-body{
+        padding:11px;
     }
 
-    .product-name{
-        font-size:13px;
+    .product-title{
+        font-size:12px;
+        min-height:38px;
     }
 
     .product-description{
-        font-size:10px;
+        font-size:9px;
     }
 
-    .price{
+    .product-price{
         font-size:16px;
     }
 
-    .categories{
-        grid-template-columns:repeat(2,1fr);
+    .old-price{
+        font-size:9px;
     }
 
-    .contact-box{
-        padding:25px;
+    .product-actions{
+        grid-template-columns:1fr;
     }
 
-    .modal-product-image{
-        height:220px;
+    .view-btn,
+    .check-btn{
+        padding:9px 3px;
     }
 
     .admin-product{
-        grid-template-columns:55px 1fr;
+        grid-template-columns:60px 1fr;
     }
 
     .admin-product img{
-        width:55px;
-        height:50px;
+        width:60px;
+        height:55px;
     }
 
-    .admin-actions{
+    .admin-product .admin-buttons{
         grid-column:1/-1;
+    }
+
+    .modal-image{
+        height:250px;
     }
 }
 </style>
@@ -988,323 +1266,474 @@ footer{
 
 <body>
 
-<header>
-    <nav class="navbar">
-        <a href="#home" class="logo">Smart<span>Product</span>Hub</a>
+<!-- ================= HEADER ================= -->
 
-        <div class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#products">Products</a>
-            <a href="#deals">Deals</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+<div class="top-strip">
+    Smart shopping starts with smarter product discovery.
+</div>
+
+<header class="header">
+
+<nav class="navbar">
+
+    <a href="#" class="logo">
+
+        <div class="logo-icon">SP</div>
+
+        <div>
+            <div class="logo-text">
+                Smart<span>Product</span>Hub
+            </div>
+            <span class="logo-sub">SMART PRODUCTS & DEALS</span>
         </div>
 
-        <button class="nav-btn" onclick="openAdmin()">Admin Panel</button>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    </nav>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#deals">Deals</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="search-top">
+
+        <input
+            type="search"
+            id="topSearch"
+            placeholder="Search products..."
+            oninput="topSearch()"
+        >
+
+        <button onclick="topSearch()">⌕</button>
+
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</nav>
+
 </header>
 
-<main id="mainWebsite">
+
+<!-- ================= MAIN WEBSITE ================= -->
+
+<main id="website">
 
 <!-- HERO -->
 
 <section class="hero" id="home">
+
     <div class="hero-inner">
 
-        <div>
-            <span class="badge">SMART PRODUCTS • SMART CHOICES</span>
+        <div class="hero-content">
 
-            <h1>Find Products<br><span>Worth Buying.</span></h1>
+            <div class="hero-small">
+                Smart Products • Smart Choices
+            </div>
+
+            <h1>
+                Discover Products<br>
+                <span>Worth Buying.</span>
+            </h1>
 
             <p>
-                Discover useful products, trending gadgets, accessories,
-                deals and carefully selected recommendations in one place.
+                Explore useful gadgets, electronics, accessories and
+                selected deals — all in one simple place.
             </p>
 
             <div class="hero-buttons">
-                <a href="#products" class="primary-btn">Explore Products →</a>
-                <a href="#deals" class="secondary-btn">🔥 View Deals</a>
+
+                <a href="#products" class="orange-btn">
+                    Explore Products
+                </a>
+
+                <a href="#deals" class="white-btn">
+                    View Today's Deals
+                </a>
+
             </div>
-        </div>
 
-        <div class="hero-card">
-            <div class="hero-card-icon">🛍️</div>
-
-            <h3>Smart Shopping Starts Here</h3>
-
-            <p>
-                Explore products and use our links to check the latest
-                product information and offers.
-            </p>
-
-            <div class="stats">
-                <div class="stat">
-                    <strong id="productCount">0</strong>
-                    <span>Products</span>
-                </div>
-
-                <div class="stat">
-                    <strong>24/7</strong>
-                    <span>Access</span>
-                </div>
-
-                <div class="stat">
-                    <strong>100%</strong>
-                    <span>Simple</span>
-                </div>
-            </div>
         </div>
 
     </div>
+
+    <div class="hero-decoration"></div>
+
 </section>
 
-<!-- SEARCH -->
+
+<!-- TRUST -->
+
+<section class="trust">
+
+<div class="trust-inner">
+
+    <div class="trust-item">
+
+        <div class="trust-icon">🔎</div>
+
+        <div>
+            <strong>Easy Product Discovery</strong>
+            <span>Find products quickly</span>
+        </div>
+
+    </div>
+
+    <div class="trust-item">
+
+        <div class="trust-icon">🔗</div>
+
+        <div>
+            <strong>Useful Product Links</strong>
+            <span>Check products from trusted stores</span>
+        </div>
+
+    </div>
+
+    <div class="trust-item">
+
+        <div class="trust-icon">🔥</div>
+
+        <div>
+            <strong>Featured Deals</strong>
+            <span>Discover selected offers</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="section" id="categories">
+
+    <div class="section-heading">
+
+        <h2>Shop by Category</h2>
+
+        <p>
+            Browse our selected product categories.
+        </p>
+
+    </div>
+
+    <div class="category-grid">
+
+        <button class="category-card" onclick="filterCategory('Electronics')">
+            <div class="category-icon">💻</div>
+            <strong>Electronics</strong>
+        </button>
+
+        <button class="category-card" onclick="filterCategory('Mobile')">
+            <div class="category-icon">📱</div>
+            <strong>Mobile</strong>
+        </button>
+
+        <button class="category-card" onclick="filterCategory('Gaming')">
+            <div class="category-icon">🎮</div>
+            <strong>Gaming</strong>
+        </button>
+
+        <button class="category-card" onclick="filterCategory('Accessories')">
+            <div class="category-icon">🎧</div>
+            <strong>Accessories</strong>
+        </button>
+
+        <button class="category-card" onclick="filterCategory('Home')">
+            <div class="category-icon">🏠</div>
+            <strong>Home</strong>
+        </button>
+
+        <button class="category-card" onclick="filterCategory('Other')">
+            <div class="category-icon">✨</div>
+            <strong>Other</strong>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
 
 <section class="section" id="products">
 
-    <div class="section-head">
-        <div>
-            <h2 class="section-title">Explore Products</h2>
-            <p class="section-subtitle">
-                Find products by name, category or keyword.
-            </p>
-        </div>
+    <div class="section-heading">
+
+        <h2>Featured Products</h2>
+
+        <p>
+            Explore products selected for SmartProductHub.
+        </p>
+
     </div>
 
-    <div class="search-box">
+    <div class="product-search">
+
         <input
             type="search"
-            id="searchInput"
+            id="productSearch"
             placeholder="Search products..."
             oninput="searchProducts()"
         >
-        <button onclick="searchProducts()">Search</button>
+
+        <button onclick="searchProducts()">⌕</button>
+
     </div>
 
     <div class="product-grid" id="productGrid"></div>
 
 </section>
 
-<!-- CATEGORIES -->
-
-<section class="section" id="categories">
-
-    <div class="section-head">
-        <div>
-            <h2 class="section-title">Shop Categories</h2>
-            <p class="section-subtitle">Explore products by category.</p>
-        </div>
-    </div>
-
-    <div class="categories">
-
-        <button class="category" onclick="filterCategory('Electronics')">
-            <div class="category-icon">💻</div>
-            <div class="category-name">Electronics</div>
-        </button>
-
-        <button class="category" onclick="filterCategory('Mobile')">
-            <div class="category-icon">📱</div>
-            <div class="category-name">Mobile</div>
-        </button>
-
-        <button class="category" onclick="filterCategory('Gaming')">
-            <div class="category-icon">🎮</div>
-            <div class="category-name">Gaming</div>
-        </button>
-
-        <button class="category" onclick="filterCategory('Accessories')">
-            <div class="category-icon">🎧</div>
-            <div class="category-name">Accessories</div>
-        </button>
-
-        <button class="category" onclick="filterCategory('Home')">
-            <div class="category-icon">🏠</div>
-            <div class="category-name">Home</div>
-        </button>
-
-        <button class="category" onclick="filterCategory('Other')">
-            <div class="category-icon">✨</div>
-            <div class="category-name">Other</div>
-        </button>
-
-    </div>
-
-</section>
 
 <!-- DEALS -->
 
-<section class="section" id="deals">
+<section class="deals-section" id="deals">
 
-    <div class="section-head">
+<div class="section">
+
+    <div class="deal-header">
+
         <div>
-            <h2 class="section-title">🔥 Featured Deals</h2>
-            <p class="section-subtitle">Products marked as deals.</p>
+            <h2>🔥 Today's Featured Deals</h2>
+            <div class="deal-line"></div>
         </div>
+
+        <p>Selected products marked as featured deals.</p>
+
     </div>
 
     <div class="product-grid" id="dealGrid"></div>
 
+</div>
+
 </section>
 
-<!-- FEATURES -->
+
+<!-- FEATURED -->
 
 <section class="section">
 
-    <div class="section-head">
-        <div>
-            <h2 class="section-title">Why SmartProductHub?</h2>
-            <p class="section-subtitle">Built for simple product discovery.</p>
-        </div>
-    </div>
+    <div class="featured">
 
-    <div class="features">
-
-        <div class="feature">
-            <div class="feature-icon">🔎</div>
-            <h3>Easy Discovery</h3>
-            <p>
-                Browse products through categories and search.
-            </p>
+        <div class="featured-image">
+            🛍️
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">📋</div>
-            <h3>Product Information</h3>
-            <p>
-                View product descriptions, prices and ratings added to the website.
-            </p>
-        </div>
+        <div class="featured-content">
 
-        <div class="feature">
-            <div class="feature-icon">🔗</div>
-            <h3>Check Product</h3>
+            <small>SmartProductHub</small>
+
+            <h2>
+                Find useful products without the hassle.
+            </h2>
+
             <p>
-                Use the product button to visit the merchant or affiliate destination.
+                We make product discovery easier by bringing useful
+                product information, categories and shopping links
+                together in one clean platform.
             </p>
+
+            <a href="#products" class="orange-btn">
+                Browse Products
+            </a>
+
         </div>
 
     </div>
 
 </section>
+
 
 <!-- ABOUT -->
 
-<section class="about" id="about">
+<section class="about-section" id="about">
 
-    <div class="about-box">
+<div class="section">
 
-        <div class="about-content">
+    <div class="about-grid">
 
-            <span class="badge">ABOUT SMARTPRODUCTHUB</span>
+        <div>
 
-            <h2>Smart choices. Simple shopping.</h2>
+            <h2>
+                About SmartProductHub
+            </h2>
 
             <p>
-                SmartProductHub is a product discovery platform created
-                to help visitors explore useful products, gadgets,
-                accessories and selected deals.
+                SmartProductHub is a product discovery website focused
+                on useful gadgets, electronics, accessories and selected
+                shopping recommendations.
             </p>
 
             <p>
-                Product information and links may be provided for
-                informational and shopping purposes.
+                Our goal is to make it easier for visitors to discover
+                products and access relevant product pages.
             </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <strong>Affiliate Disclosure</strong>
+
+            <span>
+                SmartProductHub may participate in affiliate marketing
+                programs. We may earn a commission from qualifying
+                purchases made through eligible links on this website.
+            </span>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
+
 
 <!-- CONTACT -->
 
-<section class="section" id="contact">
+<section class="contact-section" id="contact">
 
-    <div class="contact-box">
+<div class="section">
 
-        <h2>Have a Question?</h2>
+    <div class="contact-card">
+
+        <h2>Contact SmartProductHub</h2>
 
         <p>
-            For website, product or business enquiries, contact us through
-            the official contact details provided by the website owner.
+            For business, product or website enquiries, contact us
+            through the email address below.
         </p>
 
-        <a href="mailto:your@email.com" class="primary-btn">
+        <!-- CHANGE THIS EMAIL -->
+        <a
+            href="mailto:your@email.com"
+            class="orange-btn"
+        >
             Contact Us
         </a>
 
     </div>
 
+</div>
+
 </section>
 
 </main>
 
-<!-- ADMIN PANEL -->
 
-<section class="section admin-panel" id="adminPanel">
+<!-- ================= ADMIN PAGE ================= -->
 
-    <div class="admin-header">
+<section id="adminPage">
+
+<div class="admin-wrap">
+
+    <div class="admin-top">
 
         <div>
-            <span class="badge">SMARTPRODUCTHUB ADMIN</span>
-            <h2 class="section-title">Product Manager</h2>
-            <p class="section-subtitle">
-                Add, edit or remove products.
+            <h1>SmartProductHub Admin</h1>
+            <p style="color:#7c8792;font-size:12px;">
+                Add and manage your products.
             </p>
         </div>
 
-        <button class="secondary-btn" onclick="closeAdmin()">
-            ← Back to Website
+        <button class="back-btn" onclick="closeAdmin()">
+            ← Website
         </button>
 
     </div>
 
-    <div class="contact-box">
+
+    <!-- ADD PRODUCT -->
+
+    <div class="admin-box">
+
+        <h2 id="formTitle">
+            Add New Product
+        </h2>
 
         <form id="productForm">
 
-            <input type="hidden" id="editId">
+            <input
+                type="hidden"
+                id="editId"
+            >
 
-            <div class="admin-grid">
+            <div class="admin-form">
 
                 <div class="form-group">
+
                     <label>Product Name *</label>
+
                     <input
                         type="text"
                         id="productName"
-                        placeholder="Example: Wireless Headphones"
+                        placeholder="Apple Watch Series 11"
                         required
                     >
+
                 </div>
 
+
                 <div class="form-group">
+
                     <label>Category *</label>
 
                     <select id="productCategory" required>
-                        <option value="">Select Category</option>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
                         <option>Electronics</option>
                         <option>Mobile</option>
                         <option>Gaming</option>
                         <option>Accessories</option>
                         <option>Home</option>
                         <option>Other</option>
+
                     </select>
+
                 </div>
 
+
                 <div class="form-group">
-                    <label>Price</label>
+
+                    <label>Current Price</label>
+
                     <input
                         type="text"
                         id="productPrice"
-                        placeholder="₹1,999"
+                        placeholder="₹29,999"
                     >
+
                 </div>
 
+
                 <div class="form-group">
+
+                    <label>Old Price</label>
+
+                    <input
+                        type="text"
+                        id="oldPrice"
+                        placeholder="₹34,999"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
                     <label>Rating</label>
+
                     <input
                         type="number"
                         id="productRating"
@@ -1313,9 +1742,25 @@ footer{
                         step="0.1"
                         placeholder="4.5"
                     >
+
                 </div>
 
+
+                <div class="form-group">
+
+                    <label>Review Count</label>
+
+                    <input
+                        type="text"
+                        id="reviewCount"
+                        placeholder="149"
+                    >
+
+                </div>
+
+
                 <div class="form-group full">
+
                     <label>Product Image</label>
 
                     <input
@@ -1325,58 +1770,89 @@ footer{
                         onchange="previewImage(event)"
                     >
 
-                    <div class="image-preview" id="imagePreview">
-                        Choose a product image
+                    <div
+                        class="image-preview"
+                        id="imagePreview"
+                    >
+                        Select product image
                     </div>
 
                     <input
                         type="hidden"
                         id="productImage"
                     >
+
                 </div>
 
+
                 <div class="form-group full">
+
                     <label>Product Description</label>
 
                     <textarea
                         id="productDescription"
                         placeholder="Write a short product description..."
                     ></textarea>
+
                 </div>
 
+
                 <div class="form-group full">
-                    <label>Affiliate / Product Link *</label>
+
+                    <label>Amazon Affiliate / Product Link *</label>
 
                     <input
                         type="url"
                         id="productLink"
-                        placeholder="https://..."
+                        placeholder="Paste your affiliate link here"
                         required
                     >
+
                 </div>
 
+
                 <div class="form-group">
+
                     <label>
                         <input
                             type="checkbox"
-                            id="productDeal"
+                            id="isDeal"
                         >
-                        Mark as Featured Deal
+                        Featured Deal
                     </label>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="amazonChoice"
+                        >
+                        Show Choice Badge
+                    </label>
+
                 </div>
 
             </div>
 
-            <div class="form-actions">
 
-                <button type="submit" class="primary-btn">
-                    <span id="submitText">Add Product</span>
+            <div class="admin-actions">
+
+                <button
+                    type="submit"
+                    class="add-btn"
+                    id="submitButton"
+                >
+                    + Add Product
                 </button>
 
                 <button
                     type="button"
-                    class="secondary-btn"
-                    onclick="resetForm()"
+                    class="clear-btn"
+                    onclick="clearForm()"
                 >
                     Clear
                 </button>
@@ -1387,224 +1863,456 @@ footer{
 
     </div>
 
-    <div class="admin-products">
 
-        <div class="section-head">
-            <div>
-                <h2 class="section-title">Your Products</h2>
-                <p class="section-subtitle">
-                    Products saved in this browser.
-                </p>
-            </div>
-        </div>
+    <!-- PRODUCT MANAGEMENT -->
 
-        <div id="adminProductList"></div>
+    <div class="admin-box">
 
-    </div>
+        <h2>
+            Manage Products
+        </h2>
 
-</section>
-
-<!-- PRODUCT MODAL -->
-
-<div class="modal" id="productModal">
-
-    <div class="modal-box">
-
-        <button class="close" onclick="closeProductModal()">×</button>
-
-        <div class="modal-product-image" id="modalImage"></div>
-
-        <div id="modalCategory" class="product-category"></div>
-
-        <h2 id="modalName"></h2>
-
-        <div id="modalRating" class="rating"></div>
-
-        <div id="modalPrice" class="modal-price"></div>
-
-        <p id="modalDescription" class="modal-description"></p>
-
-        <a
-            id="modalLink"
-            href="#"
-            target="_blank"
-            rel="nofollow sponsored noopener"
-            class="primary-btn"
-        >
-            Check Product →
-        </a>
+        <div
+            class="admin-product-list"
+            id="adminProductList"
+        ></div>
 
     </div>
 
 </div>
 
-<!-- FOOTER -->
+</section>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div class="modal" id="productModal">
+
+<div class="modal-box">
+
+    <button
+        class="close-modal"
+        onclick="closeModal()"
+    >
+        ×
+    </button>
+
+    <div
+        class="modal-image"
+        id="modalImage"
+    ></div>
+
+    <div
+        class="modal-category"
+        id="modalCategory"
+    ></div>
+
+    <h2
+        class="modal-title"
+        id="modalTitle"
+    ></h2>
+
+    <div
+        class="rating"
+        id="modalRating"
+    ></div>
+
+    <div
+        class="modal-price"
+        id="modalPrice"
+    ></div>
+
+    <p
+        class="modal-description"
+        id="modalDescription"
+    ></p>
+
+    <a
+        id="modalLink"
+        href="#"
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        class="orange-btn"
+    >
+        Check Price →
+    </a>
+
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="footer-inner">
+<div class="footer-inner">
 
-        <div class="footer-top">
+    <div class="footer-grid">
 
-            <div class="footer-col">
+        <div class="footer-col">
 
-                <a href="#home" class="logo">
-                    Smart<span>Product</span>Hub
-                </a>
-
-                <p style="margin-top:12px;">
-                    Discover useful products, recommendations and deals.
-                </p>
-
+            <div class="footer-logo">
+                Smart<span>Product</span>Hub
             </div>
 
-            <div class="footer-col">
-
-                <h3>Quick Links</h3>
-
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-                <a href="#categories">Categories</a>
-                <a href="#deals">Deals</a>
-
-            </div>
-
-            <div class="footer-col">
-
-                <h3>Information</h3>
-
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-
-            </div>
+            <p>
+                Discover smart products, useful recommendations
+                and selected shopping deals.
+            </p>
 
         </div>
 
-        <div class="disclosure">
 
-            <strong>Affiliate Disclosure:</strong>
-            SmartProductHub participates in affiliate marketing programs.
-            We may earn a commission from qualifying purchases made through
-            links on this website. Product prices and availability may change.
+        <div class="footer-col">
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#categories">Categories</a>
+            <a href="#deals">Deals</a>
 
         </div>
 
-        <div class="copyright">
-            © <span id="year"></span> SmartProductHub. All rights reserved.
+
+        <div class="footer-col">
+
+            <h3>Information</h3>
+
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+            <!-- Admin access -->
+            <a href="javascript:void(0)" onclick="openAdmin()">
+                Admin
+            </a>
+
         </div>
 
     </div>
 
+
+    <div class="disclosure">
+
+        <strong>Affiliate Disclosure:</strong>
+        SmartProductHub may earn commissions from qualifying
+        purchases made through eligible affiliate links.
+        Prices and availability may change.
+
+    </div>
+
+
+    <div class="copyright">
+
+        © <span id="year"></span>
+        SmartProductHub. All Rights Reserved.
+
+    </div>
+
+</div>
+
 </footer>
 
-<div class="toast" id="toast"></div>
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
 
 <script>
-/* =========================================================
-   SMARTPRODUCTHUB PRODUCT SYSTEM
-   ========================================================= */
 
-const STORAGE_KEY = "smartProductHubProducts";
+/* =====================================================
+   SMARTPRODUCTHUB PRODUCT DATABASE
+===================================================== */
 
-let products = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+const STORAGE_KEY = "smartproducthub_v2";
+
+let products =
+JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+
     {
-        id: 1,
-        name: "Wireless Headphones",
-        category: "Accessories",
-        price: "₹1,999",
-        rating: "4.5",
-        image: "",
-        description: "A sample product card. Replace this with your own product.",
-        link: "https://www.amazon.in/",
-        deal: true
+        id:1,
+        name:"Wireless Headphones",
+        category:"Accessories",
+        price:"₹1,999",
+        oldPrice:"₹2,999",
+        rating:"4.5",
+        reviewCount:"1,249",
+        image:"",
+        description:"Comfortable wireless headphones with a modern design.",
+        link:"https://www.amazon.in/",
+        deal:true,
+        amazonChoice:true
     },
+
     {
-        id: 2,
-        name: "Gaming Mouse",
-        category: "Gaming",
-        price: "₹899",
-        rating: "4.4",
-        image: "",
-        description: "A sample gaming accessory for demonstration.",
-        link: "https://www.amazon.in/",
-        deal: false
+        id:2,
+        name:"Gaming Mouse",
+        category:"Gaming",
+        price:"₹899",
+        oldPrice:"₹1,499",
+        rating:"4.4",
+        reviewCount:"842",
+        image:"",
+        description:"A responsive gaming mouse suitable for everyday gaming.",
+        link:"https://www.amazon.in/",
+        deal:true,
+        amazonChoice:false
     },
+
     {
-        id: 3,
-        name: "USB-C Fast Charger",
-        category: "Electronics",
-        price: "₹699",
-        rating: "4.3",
-        image: "",
-        description: "A sample electronics product for your website.",
-        link: "https://www.amazon.in/",
-        deal: true
+        id:3,
+        name:"USB-C Fast Charger",
+        category:"Electronics",
+        price:"₹699",
+        oldPrice:"₹999",
+        rating:"4.3",
+        reviewCount:"2,104",
+        image:"",
+        description:"Compact fast charger for compatible devices.",
+        link:"https://www.amazon.in/",
+        deal:false,
+        amazonChoice:true
     },
+
     {
-        id: 4,
-        name: "Mobile Stand",
-        category: "Mobile",
-        price: "₹399",
-        rating: "4.2",
-        image: "",
-        description: "A simple mobile accessory product.",
-        link: "https://www.amazon.in/",
-        deal: false
+        id:4,
+        name:"Premium Mobile Stand",
+        category:"Mobile",
+        price:"₹399",
+        oldPrice:"₹599",
+        rating:"4.2",
+        reviewCount:"628",
+        image:"",
+        description:"Adjustable mobile stand for desk and home use.",
+        link:"https://www.amazon.in/",
+        deal:false,
+        amazonChoice:false
     }
+
 ];
 
+
+/* SAVE */
+
 function saveProducts(){
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(products)
+    );
+
 }
+
+
+/* ESCAPE HTML */
 
 function escapeHTML(value){
-    if(value === undefined || value === null) return "";
+
+    if(value === null || value === undefined){
+        return "";
+    }
 
     return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
 }
+
+
+/* STARS */
 
 function stars(rating){
 
-    const r = Number(rating) || 0;
+    let number = Number(rating) || 0;
 
-    let html = "";
+    let result = "";
 
-    for(let i = 1; i <= 5; i++){
-        html += i <= Math.round(r) ? "★" : "☆";
+    for(let i=1;i<=5;i++){
+
+        result +=
+            i <= Math.round(number)
+            ? "★"
+            : "☆";
+
     }
 
-    return html + " " + (r ? r.toFixed(1) : "0.0");
+    return result;
+
 }
 
-function productImage(image){
+
+/* IMAGE */
+
+function imageHTML(image){
 
     if(image){
 
         return `
             <img
                 src="${escapeHTML(image)}"
-                alt="Product image"
+                alt="Product"
                 loading="lazy"
             >
         `;
+
     }
 
-    return `<div class="no-image">🛍️</div>`;
+    return `
+        <div class="product-placeholder">
+            🛍️
+        </div>
+    `;
+
 }
+
+
+/* PRODUCT CARD */
+
+function productCard(product){
+
+    return `
+
+    <article class="product-card">
+
+        <div class="product-image">
+
+            ${
+                product.deal
+                ?
+                `<div class="discount-badge">
+                    DEAL
+                </div>`
+                :
+                ""
+            }
+
+            ${
+                product.amazonChoice
+                ?
+                `<div class="choice-badge">
+                    FEATURED
+                </div>`
+                :
+                ""
+            }
+
+            ${imageHTML(product.image)}
+
+        </div>
+
+
+        <div class="product-body">
+
+            <div class="product-brand">
+                ${escapeHTML(product.category)}
+            </div>
+
+            <h3 class="product-title">
+                ${escapeHTML(product.name)}
+            </h3>
+
+            <div class="rating">
+
+                ${stars(product.rating)}
+
+                <span>
+                    ${escapeHTML(product.rating || "0")}
+                    ${
+                        product.reviewCount
+                        ?
+                        ` (${escapeHTML(product.reviewCount)})`
+                        :
+                        ""
+                    }
+                </span>
+
+            </div>
+
+            <p class="product-description">
+                ${escapeHTML(product.description)}
+            </p>
+
+
+            <div class="price-row">
+
+                <span class="product-price">
+                    ${escapeHTML(product.price || "Check Price")}
+                </span>
+
+                ${
+                    product.oldPrice
+                    ?
+                    `<span class="old-price">
+                        ${escapeHTML(product.oldPrice)}
+                    </span>`
+                    :
+                    ""
+                }
+
+                ${
+                    product.deal
+                    ?
+                    `<span class="offer">
+                        DEAL
+                    </span>`
+                    :
+                    ""
+                }
+
+            </div>
+
+
+            <div class="product-actions">
+
+                <button
+                    class="view-btn"
+                    onclick="openProduct(${product.id})"
+                >
+                    View Details
+                </button>
+
+                <a
+                    class="check-btn"
+                    href="${escapeHTML(product.link)}"
+                    target="_blank"
+                    rel="nofollow sponsored noopener"
+                >
+                    Check Price
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    `;
+
+}
+
+
+/* RENDER PRODUCTS */
 
 function renderProducts(list = products){
 
-    const grid = document.getElementById("productGrid");
+    const grid =
+        document.getElementById("productGrid");
 
     if(!list.length){
 
         grid.innerHTML = `
-            <div class="empty" style="grid-column:1/-1;">
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:50px;
+                color:#7d8792;
+            ">
                 No products found.
             </div>
         `;
@@ -1612,308 +2320,401 @@ function renderProducts(list = products){
         return;
     }
 
-    grid.innerHTML = list.map(product => `
+    grid.innerHTML =
+        list.map(productCard).join("");
 
-        <article class="product-card">
-
-            <div class="product-image">
-                ${productImage(product.image)}
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-category">
-                    ${escapeHTML(product.category)}
-                </div>
-
-                <h3 class="product-name">
-                    ${escapeHTML(product.name)}
-                </h3>
-
-                <p class="product-description">
-                    ${escapeHTML(product.description)}
-                </p>
-
-                <div class="rating">
-                    ${stars(product.rating)}
-                </div>
-
-                <div class="price-row">
-
-                    <span class="price">
-                        ${escapeHTML(product.price || "Check Price")}
-                    </span>
-
-                    ${
-                        product.deal
-                        ? `<span class="deal">DEAL</span>`
-                        : ""
-                    }
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button
-                        class="details-btn"
-                        onclick="openProductModal(${product.id})"
-                    >
-                        Details
-                    </button>
-
-                    <a
-                        class="buy-btn"
-                        href="${escapeHTML(product.link)}"
-                        target="_blank"
-                        rel="nofollow sponsored noopener"
-                    >
-                        Check Price
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    `).join("");
-
-    document.getElementById("productCount").textContent = products.length;
 }
+
+
+/* RENDER DEALS */
 
 function renderDeals(){
 
-    const grid = document.getElementById("dealGrid");
+    const grid =
+        document.getElementById("dealGrid");
 
-    const deals = products.filter(product => product.deal);
+    const deals =
+        products.filter(product => product.deal);
 
     if(!deals.length){
 
         grid.innerHTML = `
-            <div class="empty" style="grid-column:1/-1;">
-                No featured deals added yet.
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:50px;
+                color:#7d8792;
+            ">
+                No featured deals available.
             </div>
         `;
 
         return;
     }
 
-    grid.innerHTML = deals.map(product => `
+    grid.innerHTML =
+        deals.map(productCard).join("");
 
-        <article class="product-card">
-
-            <div class="product-image">
-                ${productImage(product.image)}
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-category">
-                    ${escapeHTML(product.category)}
-                </div>
-
-                <h3 class="product-name">
-                    ${escapeHTML(product.name)}
-                </h3>
-
-                <div class="rating">
-                    ${stars(product.rating)}
-                </div>
-
-                <div class="price-row">
-
-                    <span class="price">
-                        ${escapeHTML(product.price || "Check Price")}
-                    </span>
-
-                    <span class="deal">
-                        FEATURED
-                    </span>
-
-                </div>
-
-                <div class="product-buttons">
-
-                    <button
-                        class="details-btn"
-                        onclick="openProductModal(${product.id})"
-                    >
-                        Details
-                    </button>
-
-                    <a
-                        class="buy-btn"
-                        href="${escapeHTML(product.link)}"
-                        target="_blank"
-                        rel="nofollow sponsored noopener"
-                    >
-                        Check Price
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    `).join("");
 }
+
+
+/* SEARCH */
 
 function searchProducts(){
 
-    const query =
-        document.getElementById("searchInput")
+    const value =
+        document
+        .getElementById("productSearch")
         .value
         .toLowerCase()
         .trim();
 
-    if(!query){
+    if(!value){
 
         renderProducts(products);
         return;
+
     }
 
-    const results = products.filter(product => {
+    const filtered =
+        products.filter(product =>
 
-        return (
-            product.name.toLowerCase().includes(query) ||
-            product.category.toLowerCase().includes(query) ||
-            product.description.toLowerCase().includes(query)
+            product.name.toLowerCase().includes(value) ||
+
+            product.category.toLowerCase().includes(value) ||
+
+            product.description.toLowerCase().includes(value)
+
         );
 
-    });
+    renderProducts(filtered);
 
-    renderProducts(results);
 }
+
+
+/* TOP SEARCH */
+
+function topSearch(){
+
+    const value =
+        document
+        .getElementById("topSearch")
+        .value
+        .trim();
+
+    document.getElementById("productSearch").value =
+        value;
+
+    searchProducts();
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* CATEGORY */
 
 function filterCategory(category){
 
-    document.getElementById("searchInput").value = category;
+    document.getElementById("productSearch").value =
+        category;
 
-    const results = products.filter(product =>
-        product.category.toLowerCase() === category.toLowerCase()
-    );
+    const filtered =
+        products.filter(product =>
+            product.category.toLowerCase() ===
+            category.toLowerCase()
+        );
 
-    renderProducts(results);
+    renderProducts(filtered);
 
-    document.getElementById("products")
-        .scrollIntoView({behavior:"smooth"});
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
 }
 
-function openProductModal(id){
 
-    const product = products.find(item => item.id === id);
+/* PRODUCT MODAL */
+
+function openProduct(id){
+
+    const product =
+        products.find(item => item.id === id);
 
     if(!product) return;
 
     document.getElementById("modalImage").innerHTML =
-        productImage(product.image);
+        imageHTML(product.image);
 
     document.getElementById("modalCategory").textContent =
         product.category;
 
-    document.getElementById("modalName").textContent =
+    document.getElementById("modalTitle").textContent =
         product.name;
 
     document.getElementById("modalRating").innerHTML =
-        stars(product.rating);
+        stars(product.rating) +
+        ` <span>${escapeHTML(product.rating || "0")}</span>`;
 
     document.getElementById("modalPrice").textContent =
         product.price || "Check Price";
 
     document.getElementById("modalDescription").textContent =
-        product.description || "No description available.";
+        product.description ||
+        "Product information available on the product page.";
 
     document.getElementById("modalLink").href =
         product.link || "#";
 
-    document.getElementById("productModal")
-        .classList.add("active");
+    document
+        .getElementById("productModal")
+        .classList.add("show");
+
 }
 
-function closeProductModal(){
 
-    document.getElementById("productModal")
-        .classList.remove("active");
+/* CLOSE MODAL */
+
+function closeModal(){
+
+    document
+        .getElementById("productModal")
+        .classList.remove("show");
+
 }
+
 
 /* ADMIN */
 
 function openAdmin(){
 
-    document.getElementById("mainWebsite").style.display = "none";
-    document.querySelector("footer").style.display = "none";
-    document.getElementById("adminPanel").classList.add("active");
+    document.getElementById("website").style.display =
+        "none";
+
+    document.getElementById("adminPage").style.display =
+        "block";
+
+    document.querySelector("footer").style.display =
+        "none";
 
     renderAdminProducts();
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    window.scrollTo(0,0);
+
 }
+
 
 function closeAdmin(){
 
-    document.getElementById("adminPanel").classList.remove("active");
-    document.getElementById("mainWebsite").style.display = "block";
-    document.querySelector("footer").style.display = "block";
+    document.getElementById("website").style.display =
+        "block";
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    document.getElementById("adminPage").style.display =
+        "none";
+
+    document.querySelector("footer").style.display =
+        "block";
+
+    window.scrollTo(0,0);
+
 }
+
+
+/* IMAGE PREVIEW */
+
+function previewImage(event){
+
+    const file =
+        event.target.files[0];
+
+    if(!file) return;
+
+    if(!file.type.startsWith("image/")){
+
+        showToast("Please select an image.");
+
+        return;
+
+    }
+
+    const reader =
+        new FileReader();
+
+    reader.onload = function(e){
+
+        document.getElementById("productImage").value =
+            e.target.result;
+
+        document.getElementById("imagePreview").innerHTML =
+            `
+            <img
+                src="${e.target.result}"
+                alt="Preview"
+            >
+            `;
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* ADD / UPDATE */
+
+document
+.getElementById("productForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const editId =
+        document.getElementById("editId").value;
+
+    const product = {
+
+        id:
+            editId
+            ? Number(editId)
+            : Date.now(),
+
+        name:
+            document.getElementById("productName").value.trim(),
+
+        category:
+            document.getElementById("productCategory").value,
+
+        price:
+            document.getElementById("productPrice").value.trim(),
+
+        oldPrice:
+            document.getElementById("oldPrice").value.trim(),
+
+        rating:
+            document.getElementById("productRating").value || "0",
+
+        reviewCount:
+            document.getElementById("reviewCount").value.trim(),
+
+        image:
+            document.getElementById("productImage").value,
+
+        description:
+            document.getElementById("productDescription").value.trim(),
+
+        link:
+            document.getElementById("productLink").value.trim(),
+
+        deal:
+            document.getElementById("isDeal").checked,
+
+        amazonChoice:
+            document.getElementById("amazonChoice").checked
+
+    };
+
+
+    if(editId){
+
+        const index =
+            products.findIndex(
+                item => item.id === Number(editId)
+            );
+
+        if(index !== -1){
+
+            products[index] = product;
+
+        }
+
+        showToast("Product updated successfully.");
+
+    }else{
+
+        products.unshift(product);
+
+        showToast("Product added successfully.");
+
+    }
+
+
+    saveProducts();
+
+    renderProducts();
+    renderDeals();
+    renderAdminProducts();
+
+    clearForm();
+
+});
+
+
+/* ADMIN LIST */
 
 function renderAdminProducts(){
 
-    const list =
+    const container =
         document.getElementById("adminProductList");
 
     if(!products.length){
 
-        list.innerHTML = `
-            <div class="empty">
-                No products added yet.
-            </div>
-        `;
+        container.innerHTML =
+            `<p style="color:#7d8792;">
+                No products added.
+            </p>`;
 
         return;
+
     }
 
-    list.innerHTML = products.map(product => `
+
+    container.innerHTML =
+        products.map(product => `
 
         <div class="admin-product">
 
             ${
                 product.image
-                ? `<img src="${escapeHTML(product.image)}" alt="">`
-                : `<div style="
-                    width:70px;
-                    height:60px;
+                ?
+                `<img
+                    src="${escapeHTML(product.image)}"
+                    alt=""
+                >`
+                :
+                `<div style="
+                    width:80px;
+                    height:70px;
+                    background:#f7f9fa;
                     display:grid;
                     place-items:center;
-                    background:#111722;
-                    border-radius:7px;
-                    font-size:25px;
+                    border-radius:4px;
+                    font-size:30px;
                 ">🛍️</div>`
             }
 
+
             <div>
 
-                <div class="admin-product-name">
+                <h3>
                     ${escapeHTML(product.name)}
-                </div>
+                </h3>
 
-                <div class="admin-product-price">
+                <p>
                     ${escapeHTML(product.category)}
                     •
                     ${escapeHTML(product.price || "No price")}
-                </div>
+                </p>
 
             </div>
 
-            <div class="admin-actions">
+
+            <div class="admin-buttons">
 
                 <button
                     class="edit-btn"
@@ -1934,104 +2735,11 @@ function renderAdminProducts(){
         </div>
 
     `).join("");
+
 }
 
-function previewImage(event){
 
-    const file = event.target.files[0];
-
-    if(!file) return;
-
-    if(!file.type.startsWith("image/")){
-
-        showToast("Please select an image file.");
-        return;
-    }
-
-    const reader = new FileReader();
-
-    reader.onload = function(e){
-
-        document.getElementById("productImage").value =
-            e.target.result;
-
-        document.getElementById("imagePreview").innerHTML = `
-            <img
-                src="${e.target.result}"
-                alt="Preview"
-            >
-        `;
-    };
-
-    reader.readAsDataURL(file);
-}
-
-document.getElementById("productForm")
-.addEventListener("submit", function(event){
-
-    event.preventDefault();
-
-    const editId =
-        document.getElementById("editId").value;
-
-    const product = {
-
-        id: editId
-            ? Number(editId)
-            : Date.now(),
-
-        name:
-            document.getElementById("productName").value.trim(),
-
-        category:
-            document.getElementById("productCategory").value,
-
-        price:
-            document.getElementById("productPrice").value.trim(),
-
-        rating:
-            document.getElementById("productRating").value || "0",
-
-        image:
-            document.getElementById("productImage").value,
-
-        description:
-            document.getElementById("productDescription").value.trim(),
-
-        link:
-            document.getElementById("productLink").value.trim(),
-
-        deal:
-            document.getElementById("productDeal").checked
-    };
-
-    if(editId){
-
-        const index =
-            products.findIndex(item => item.id === Number(editId));
-
-        if(index !== -1){
-            products[index] = product;
-        }
-
-        showToast("Product updated successfully.");
-
-    }else{
-
-        products.unshift(product);
-
-        showToast("Product added successfully.");
-    }
-
-    saveProducts();
-
-    renderProducts();
-    renderDeals();
-    renderAdminProducts();
-
-    resetForm();
-
-});
+/* EDIT */
 
 function editProduct(id){
 
@@ -2039,6 +2747,7 @@ function editProduct(id){
         products.find(item => item.id === id);
 
     if(!product) return;
+
 
     document.getElementById("editId").value =
         product.id;
@@ -2050,10 +2759,16 @@ function editProduct(id){
         product.category;
 
     document.getElementById("productPrice").value =
-        product.price;
+        product.price || "";
+
+    document.getElementById("oldPrice").value =
+        product.oldPrice || "";
 
     document.getElementById("productRating").value =
-        product.rating;
+        product.rating || "";
+
+    document.getElementById("reviewCount").value =
+        product.reviewCount || "";
 
     document.getElementById("productImage").value =
         product.image || "";
@@ -2064,29 +2779,47 @@ function editProduct(id){
     document.getElementById("productLink").value =
         product.link || "";
 
-    document.getElementById("productDeal").checked =
+    document.getElementById("isDeal").checked =
         Boolean(product.deal);
+
+    document.getElementById("amazonChoice").checked =
+        Boolean(product.amazonChoice);
+
 
     if(product.image){
 
-        document.getElementById("imagePreview").innerHTML = `
-            <img src="${escapeHTML(product.image)}" alt="Preview">
-        `;
+        document.getElementById("imagePreview").innerHTML =
+            `
+            <img
+                src="${escapeHTML(product.image)}"
+                alt="Preview"
+            >
+            `;
 
     }else{
 
         document.getElementById("imagePreview").textContent =
-            "Choose a product image";
+            "Select product image";
+
     }
 
-    document.getElementById("submitText").textContent =
+
+    document.getElementById("formTitle").textContent =
+        "Edit Product";
+
+    document.getElementById("submitButton").textContent =
         "Update Product";
+
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
+
 }
+
+
+/* DELETE */
 
 function deleteProduct(id){
 
@@ -2095,14 +2828,17 @@ function deleteProduct(id){
 
     if(!product) return;
 
-    const confirmDelete =
-        confirm(
-            'Delete "' +
-            product.name +
-            '" from SmartProductHub?'
-        );
 
-    if(!confirmDelete) return;
+    if(!confirm(
+        'Delete "' +
+        product.name +
+        '"?'
+    )){
+
+        return;
+
+    }
+
 
     products =
         products.filter(item => item.id !== id);
@@ -2114,30 +2850,44 @@ function deleteProduct(id){
     renderAdminProducts();
 
     showToast("Product deleted.");
+
 }
 
-function resetForm(){
+
+/* CLEAR */
+
+function clearForm(){
 
     document.getElementById("productForm").reset();
 
-    document.getElementById("editId").value = "";
+    document.getElementById("editId").value =
+        "";
 
-    document.getElementById("productImage").value = "";
+    document.getElementById("productImage").value =
+        "";
 
     document.getElementById("imagePreview").textContent =
-        "Choose a product image";
+        "Select product image";
 
-    document.getElementById("submitText").textContent =
-        "Add Product";
+    document.getElementById("formTitle").textContent =
+        "Add New Product";
+
+    document.getElementById("submitButton").textContent =
+        "+ Add Product";
+
 }
 
-/* MENU */
+
+/* MOBILE MENU */
 
 function toggleMenu(){
 
-    document.getElementById("navLinks")
+    document
+        .getElementById("navLinks")
         .classList.toggle("show");
+
 }
+
 
 /* TOAST */
 
@@ -2146,35 +2896,48 @@ function showToast(message){
     const toast =
         document.getElementById("toast");
 
-    toast.textContent = message;
+    toast.textContent =
+        message;
 
     toast.classList.add("show");
 
-    setTimeout(() => {
+    setTimeout(function(){
+
         toast.classList.remove("show");
-    }, 2500);
+
+    },2500);
+
 }
 
-/* CLOSE MODAL */
 
-document.getElementById("productModal")
-.addEventListener("click", function(event){
+/* MODAL OUTSIDE CLICK */
+
+document
+.getElementById("productModal")
+.addEventListener("click",function(event){
 
     if(event.target === this){
-        closeProductModal();
+
+        closeModal();
+
     }
 
 });
 
-/* INITIALIZE */
+
+/* YEAR */
 
 document.getElementById("year").textContent =
     new Date().getFullYear();
 
+
+/* START */
+
 renderProducts();
 renderDeals();
 renderAdminProducts();
+
 </script>
 
 </body>
-  </html>
+        </html>
